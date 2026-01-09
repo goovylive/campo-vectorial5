@@ -2,7 +2,8 @@ name: Sync to Hugging Face Spaces
 
 on:
   push:
-    branches: [main]  # Si tu branch principal se llama "master", cámbialo aquí
+    branches: [main]  # Cambia a "master" si tu branch principal es master
+  workflow_dispatch:  # Para ejecutarlo manualmente si quieres
 
 jobs:
   sync:
@@ -11,10 +12,10 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
+          lfs: true  # Por si tienes archivos grandes en el futuro
 
       - name: Push to Hugging Face Spaces
         env:
-          HF_TOKEN: ${{ secrets.HF_TOKEN5 }}  # Aquí usamos HF_TOKEN5 porque así lo nombraste
+          HF_TOKEN: ${{ secrets.HF_TOKEN5 }}  # Tu secret exacto
         run: |
-          git remote add space https://huggingface.co/spaces/goovylive/campo-vectorial5 || true
-          git push --force space main
+          git push --force https://goovylive:$HF_TOKEN@huggingface.co/spaces/goovylive/campo-vectorial5 main
