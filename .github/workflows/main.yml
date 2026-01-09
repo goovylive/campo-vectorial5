@@ -2,8 +2,8 @@ name: Sync to Hugging Face Spaces
 
 on:
   push:
-    branches: [main]  # Cambia a "master" si tu branch principal es master
-  workflow_dispatch:  # Para ejecutarlo manualmente
+    branches: [main]
+  workflow_dispatch:  # Para correrlo manualmente
 
 jobs:
   sync:
@@ -16,6 +16,6 @@ jobs:
 
       - name: Push to Hugging Face Spaces
         env:
-          HF_TOKEN: ${{ secrets.HF_TOKEN5 }}  # Tu secret exacto
+          HF_TOKEN: ${{ secrets.HF_TOKEN5 }}
         run: |
           git push --force https://goovylive:$HF_TOKEN@huggingface.co/spaces/goovylive/campo-vectorial5 main
