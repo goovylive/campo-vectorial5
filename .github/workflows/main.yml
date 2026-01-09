@@ -1,0 +1,20 @@
+name: Sync to Hugging Face Spaces
+
+on:
+  push:
+    branches: [main]  # Si tu branch principal se llama "master", cámbialo aquí
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Push to Hugging Face Spaces
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN5 }}  # Aquí usamos HF_TOKEN5 porque así lo nombraste
+        run: |
+          git remote add space https://huggingface.co/spaces/goovylive/campo-vectorial5 || true
+          git push --force space main
