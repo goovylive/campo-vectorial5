@@ -1,0 +1,1 @@
+"App de curvas implícitas"
