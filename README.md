@@ -2,9 +2,9 @@
 title: Visualizador de Curvas Implícitas
 emoji: 📊
 colorFrom: blue
-colorTo: purple
-sdk: docker
-sdk_version: latest
+colorTo: green
+sdk: streamlit
+sdk_version: 1.28.0
 app_file: app.py
 pinned: false
 ---
@@ -13,9 +13,10 @@ pinned: false
 App interactiva para graficar ecuaciones implícitas del tipo **f(x, y, t) = g(x, y, t)**.
 
 ### Ejemplos para probar:
-- `x^2 + y^2 = t` → Círculos crecientes
+- `x^2 + y^2 = t` → Círculos crecientes con t
 - `x^2 - y^2 = t` → Hipérbolas
 - `x*y = t` → Hipérbolas rotadas
 - `sin(x) + cos(y) = t` → Ondas interesantes
+- `x^3 + y^3 = t` → Curvas cúbicas deformándose
 
-Ajusta los límites y el valor de t. ¡Explora la matemática visual!
+¡Ajusta los límites, mueve t y explora la matemática visual!
