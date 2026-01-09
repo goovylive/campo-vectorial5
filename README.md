@@ -1,1 +1,1 @@
-"App de curvas implícitas "
+"App de curvas implícitas"
