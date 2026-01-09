@@ -3,7 +3,7 @@ name: Sync to Hugging Face Spaces
 on:
   push:
     branches: [main]  # Cambia a "master" si tu branch principal es master
-  workflow_dispatch:  # Para ejecutarlo manualmente si quieres
+  workflow_dispatch:  # Para ejecutarlo manualmente
 
 jobs:
   sync:
@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-          lfs: true  # Por si tienes archivos grandes en el futuro
+          lfs: true
 
       - name: Push to Hugging Face Spaces
         env:
