@@ -3,7 +3,7 @@ name: Sync to Hugging Face Spaces
 on:
   push:
     branches: [main]
-  workflow_dispatch:  # Ya lo tienes para trigger manual
+  workflow_dispatch:  # Trigger manual (ya lo tienes)
 
 jobs:
   sync:
